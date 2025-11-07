@@ -43,21 +43,15 @@ async def start_command(client: Bot, message: Message):
             
     await add_user(user_id)
 
-    # ✅ Check Force Subscription
-    if not await is_subscribed(client, user_id):
-        await temp.delete()
-        return await not_joined(client, message)
-
- 
     # Check FSub requirements
-     fsub_channels = await get_fsub_channels()
-     if fsub_channels:
-         is_subscribed, subscription_message, subscription_buttons = await check_subscription_status(client, user_id, fsub_channels)
-          if not is_subscribed:
-             return await message.reply_text(
-               subscription_message,
-               reply_markup=subscription_buttons,
-               parse_mode=ParseMode.HTML
+    fsub_channels = await get_fsub_channels()
+    if fsub_channels:
+        is_subscribed, subscription_message, subscription_buttons = await check_subscription_status(client, user_id, fsub_channels)
+        if not is_subscribed:
+            return await message.reply_text(
+                subscription_message,
+                reply_markup=subscription_buttons,
+                parse_mode=ParseMode.HTML
             )
 
     text = message.text
@@ -195,8 +189,8 @@ async def start_command(client: Bot, message: Message):
 
 
 #=====================================================================================##
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
+# Don't Remove Credit @pr_all_bot, @owner_of_pr
+# Ask Doubt on telegram @pr_all_bot_support
 
 async def get_link_creation_time(channel_id):
     """Get the creation time of the current invite link for a channel."""
@@ -263,7 +257,7 @@ async def not_joined(client: Client, message: Message):
                 except Exception as e:
                     print(f"Error with chat {chat_id}: {e}")
                     return #await temp.edit(
-                        #f"<b><i>! Eʀʀᴏʀ, Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴛᴏ sᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇs @rohit_1888</i></b>\n"
+                        #f"<b><i>! Eʀʀᴏʀ, Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴛᴏ sᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇs @owner_of_pr</i></b>\n"
                         #f"<blockquote expandable><b>Rᴇᴀsᴏɴ:</b> {e}</blockquote>"
                     #)
 
