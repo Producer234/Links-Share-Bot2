@@ -49,7 +49,7 @@ async def start_command(client: Bot, message: Message):
         return await not_joined(client, message)
 
  
-     Check FSub requirements
+    # Check FSub requirements
      fsub_channels = await get_fsub_channels()
      if fsub_channels:
          is_subscribed, subscription_message, subscription_buttons = await check_subscription_status(client, user_id, fsub_channels)
