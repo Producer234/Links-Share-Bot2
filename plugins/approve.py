@@ -53,8 +53,8 @@ async def autoapprove(client, message: ChatJoinRequest):
     if APPROVED == "on":
         invite_link = await client.export_chat_invite_link(chat.id)
         buttons = [
-         [InlineKeyboardButton('• ᴊᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇs •', url='https://t.me/pr_all_bot')],
-          [InlineKeyboardButton('• ᴊᴏɪɴ ᴍʏ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ •', url='https://t.me/main_channel_pr')],
+         [InlineKeyboardButton('• ᴊᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇs •', url='https://t.me/ALL_PR_BOTS')],
+          [InlineKeyboardButton('• ᴊᴏɪɴ ᴍʏ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ •', url='https://t.me/PR_X_MAIN_CHANNEL')],
             [InlineKeyboardButton(f'• ᴊᴏɪɴ {chat.title} •', url=invite_link)]
         ]
         markup = InlineKeyboardMarkup(buttons)
